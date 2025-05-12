@@ -1,4 +1,20 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Random User Directory
+
+This is a [Next.js](https://nextjs.org) application that interacts with the Random User API to display user information with a searchable contact-like interface.
+
+## Features
+
+- **User Fetching**: Fetches 100 random users from the Random User API
+- **Searchable Dropdown**: Search users by first name with debounced search functionality
+- **Detailed User View**: Displays comprehensive user information including:
+  - Full Name
+  - Gender
+  - Email (clickable)
+  - Phone (clickable)
+  - Country
+  - Profile Picture
+- **Accessibility**: Keyboard navigation support and ARIA attributes
+- **Performance**: Debounced search to minimize re-renders
 
 ## Getting Started
 
@@ -16,9 +32,32 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Implementation Details
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This project was built according to the following requirements:
+
+1. Fetch Users: Fetch a list of users (100) from the Random User API
+2. Searchable Dropdown: Create a searchable dropdown where users can search by first name
+3. Display User Details: Show full name, gender, email, phone, country, and picture when a user is selected
+
+### Performance Optimizations
+
+- Debounced search input to reduce unnecessary re-renders
+- Next.js Image component for optimized image loading
+- Client-side filtering for instant search results
+
+### Accessibility Features
+
+- Keyboard navigation (arrow keys, enter, escape)
+- Proper ARIA attributes for screen readers
+- Visual indication of the currently selected item
+- Focus management
+
+## Project Structure
+
+- `/app` - Next.js app directory with layout and main page
+- `/src/components` - React components for the UI
+- `/src/services` - Service layer for API interactions
 
 ## Learn More
 
